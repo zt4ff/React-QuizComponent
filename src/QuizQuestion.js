@@ -5,10 +5,14 @@ class QuizQuestion extends Component {
     return (
       <main>
         <section>
-          <p>// instruction text goes here</p>
+          <p>{props.quiz_question.instruction_text}</p>
         </section>
         <section className="buttons">
-          <ul>//quiz question button logic goes here</ul>
+          <ul>
+            {props.quiz_question.answer.map((answer, index) => (
+              <li key={index}>{answer}</li>
+            ))}
+          </ul>
         </section>
       </main>
     );
